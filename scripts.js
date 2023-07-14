@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const scrollButtons = document.querySelectorAll('.scroll-button');
-  scrollButtons.forEach(function(button, index) {
-    button.addEventListener('click', function() {
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollButtons = document.querySelectorAll(".scroll-button");
+  scrollButtons.forEach(function (button, index) {
+    button.addEventListener("click", function () {
       if (index < pages.length - 1) {
         currentPage = index + 1;
         scrollToPage(currentPage);
@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener('wheel', scrollHandler);
+document.addEventListener("wheel", scrollHandler);
 
 let currentPage = 0;
-const pages = document.querySelectorAll('.page');
+const pages = document.querySelectorAll(".page");
 
 function scrollHandler(e) {
   if (e.deltaY > 0) {
@@ -37,13 +37,13 @@ function scrollHandler(e) {
 function scrollToPage(pageIndex) {
   window.scrollTo({
     top: pages[pageIndex].offsetTop,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 }
 
 function scrollToTop() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 }
